@@ -225,3 +225,6 @@ __marimo__/
 
 # Data directory
 data/*
+
+# Output directory
+output/*

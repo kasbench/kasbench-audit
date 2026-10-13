@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>{{ title }}</h1>
+  <p class="subtitle">Benchmark Run ID: {{ run_id }} <br \>
+  Benchmark Execution: {{ start_time }} to {{ end_time }} <br />
+  Report Date: {{report_date}} <br />
+  </p>
+
+  
+  <h2>Disposition: Exclude</h2>
+
+  {% if exclude_event_table_html %}
+  <div class="table-wrap">
+  {{ exclude_event_table_html | safe }}
+  </div>
+  {% else %}
+  <strong>No such events.</strong>
+  {% endif %}
+
+
+  <h2>Disposition: Review</h2>
+
+  {% if review_event_table_html %}
+  <div class="table-wrap">
+  {{ review_event_table_html | safe }}
+  </div>
+  {% else %}
+  <strong>No such events.</strong>
+  {% endif %}
+
+
+  <h2>Disposition: Retain</h2>
+
+  {% if retain_event_table_html %}
+  <div class="table-wrap">
+  {{ retain_event_table_html | safe }}
+  </div>
+  {% else %}
+  <strong>No such events.</strong>
+  {% endif %}
+
+
+  {% if ignore_event_table_html %}
+  <h2>Disposition: Normal/Ignore</h2>
+
+  <div class="table-wrap">
+  {{ ignore_event_table_html | safe }}
+  </div>
+  {% endif %}
+
+  
+
+  
+
+
+
+</body>
+</html>
